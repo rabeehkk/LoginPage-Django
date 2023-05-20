@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create an Account</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/8245.png');
+      background-color: black;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      min-height: 90vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      margin-top: 100px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.886);
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      color: #fff;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .form-control {
+      border-radius: 3px;
+    }
+
+    .btn-primary {
+      width: 100%;
+      background-color: rgb(0, 0, 0);
+    }
+
+    .btn-primary:hover {
+      background-color: rgba(255, 255, 255, 0.085);
+      color: white;
+    }
+
+    .back-to-login {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back-to-login a {
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Create an Account</h2>
+    <form action="" method="post">
+      {% csrf_token %}
+
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter your username" name="username">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter your password" name="password1">
+      </div>
+
+      <div class="form-group">
+            <label for="password2">Confirm Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Confirm your password" name="password2">
+      </div>
+
+
+
+      
+
+      <button type="submit" class="btn btn-primary">Create Account</button>
+    
+    <div class="back-to-login">
+      <p>Already have an account? <a href="{% url 'login' %}">Back to Login</a></p>
+    </div>
+  </form>
+  </div>
+</body>
+
+</html>
